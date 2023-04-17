@@ -1,0 +1,31 @@
+﻿<Window x:Class="MineSweeper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MineSweeper"
+        mc:Ignorable="d"
+        Background="LightYellow"
+        ResizeMode="NoResize"
+        Title="MineSweeper" Height="700" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Button Click="Button_UjJatek" Grid.Row="2" Content="Új játék" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,50" FontSize="20" Width="120" Height="30" FontFamily="Bahnschrift"/>
+        <ComboBox x:Name="nehezseg" Grid.Row="2" Grid.Column="0" Margin="0,0,30,50" Width="120" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Bahnschrift" FontSize="20">
+            <ComboBoxItem  Content="Könnyű" IsSelected="True"/>
+            <ComboBoxItem  Content="Normál"/>
+            <ComboBoxItem  Content="Nehéz"/>
+        </ComboBox>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" x:Name="aknakTB" Margin="20" FontSize="20" Height="30" FontFamily="Bahnschrift" />
+        <Grid Grid.Row="1" Margin="20" x:Name="gridTo" HorizontalAlignment="Center"></Grid>
+        <Image x:Name="doomGuy" Source="doomGuy0.png" Grid.Row="0" HorizontalAlignment="center"/>
+        <TextBlock x:Name="idozito" Grid.Row="0" HorizontalAlignment="Right" Margin="20" FontSize="20" Height="30" FontFamily="Bahnschrift"/>
+    </Grid>
+</Window>
