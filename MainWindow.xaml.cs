@@ -402,12 +402,14 @@ namespace MineSweeper
             foreach (Button item in gridTo.Children)
             {
                 adatok = Convert.ToString(item.Tag).Split(',');
-                if (Convert.ToString(item.Content) != Convert.ToString(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]))
+
+                if (Convert.ToString(item.Content) == Convert.ToString(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]) || Convert.ToString(item.Content) == "  ")
                 {
                     klikkSzamlalo++;
+                    testTB.Text = Convert.ToString(klikkSzamlalo);
                 }
             }
-            if (klikkSzamlalo == aknaSzam)
+            if (mezoSzam-klikkSzamlalo == aknaSzam)
             {
                 stopWatch.Stop();
                 mehet = false;

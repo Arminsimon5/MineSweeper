@@ -30,5 +30,6 @@
         <Grid Grid.Row="1" Margin="20" x:Name="gridTo" HorizontalAlignment="Center"></Grid>
         <Image x:Name="doomGuy" Source="doomGuy0.png" Grid.Row="0" HorizontalAlignment="center"/>
         <TextBlock x:Name="idozito" Grid.Row="0" HorizontalAlignment="Right" Margin="20" FontSize="20" Height="30" FontFamily="Bahnschrift"/>
+        <TextBlock x:Name="testTB" Grid.Row="2" HorizontalAlignment="Center" Margin="20" FontSize="20" Height="30" FontFamily="Bahnschrift"/>
     </Grid>
 </Window>
