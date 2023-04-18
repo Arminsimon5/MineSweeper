@@ -19,3 +19,5 @@ C:\Users\KaKaS\Documents\programozas C#\MineSweeper\obj\Debug\net6.0-windows\ref
 C:\Users\KaKaS\Documents\programozas C#\MineSweeper\obj\Debug\net6.0-windows\MineSweeper.pdb
 C:\Users\KaKaS\Documents\programozas C#\MineSweeper\obj\Debug\net6.0-windows\MineSweeper.genruntimeconfig.cache
 C:\Users\KaKaS\Documents\programozas C#\MineSweeper\obj\Debug\net6.0-windows\ref\MineSweeper.dll
+C:\Users\KaKaS\Documents\programozas C#\MineSweeper\bin\Debug\net6.0-windows\akna.png
+C:\Users\KaKaS\Documents\programozas C#\MineSweeper\obj\Debug\net6.0-windows\MineSweeper_Content.g.cs

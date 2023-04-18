@@ -9,6 +9,9 @@
         ResizeMode="NoResize"
         Title="MineSweeper" Height="700" Width="500">
     <Grid>
+        <Grid.Resources>
+            <ImageBrush x:Key="akna" ImageSource="akna.png" Stretch="UniformToFill"/>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>

@@ -342,6 +342,7 @@ namespace MineSweeper
                     b.MouseRightButtonDown += Button_JobbKattint;
                     b.FontSize = fontSize;
                     b.FontWeight = FontWeights.Bold;
+
                 }
             }
             dispatcherTimer.Tick += new EventHandler(dt_Tick);
@@ -355,35 +356,48 @@ namespace MineSweeper
             string[] adatok = Convert.ToString((sender as Button).Tag).Split(',');
             if (Convert.ToString((sender as Button).Content) != Convert.ToString(mezok[Convert.ToInt32(adatok[0]), Convert.ToInt32(adatok[1])]))
             {
-                if ((sender as Button).Content != "X")
+                if ((sender as Button).Content != "P")
                 {
-                    (sender as Button).Content = Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]);
+                    if (mezok[Convert.ToInt32(adatok[0]), Convert.ToInt32(adatok[1])] == 0)
+                    {
+                        (sender as Button).Content = "  ";
+                    }
+                    else if (mezok[Convert.ToInt32(adatok[0]), Convert.ToInt32(adatok[1])] == -1)
+                    {
+                        (sender as Button).Content = "X";
+                    }
+                    else
+                    {
+                        (sender as Button).Content = Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]);
+                    }
+                    
                     (sender as Button).IsEnabled = false;
 
 
                 }
-            }
-            if (Convert.ToInt32(Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])])) == -1 && (sender as Button).Content != "X") 
-            {
-                stopWatch.Stop();
-                mehet = false;
-                allas = false;
-
-
-                MessageBox.Show($"Vesztettél, mert rátaláltál egy aknára. Az időd {idozito.Text}","Vesztettél");
-                foreach (Button item in gridTo.Children)
+                if (Convert.ToInt32(Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])])) == -1 && (sender as Button).Content != "P")
                 {
-                    adatok = Convert.ToString(item.Tag).Split(',');
-                    if (Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]) == -1)
+                    stopWatch.Stop();
+                    mehet = false;
+                    allas = false;
+
+
+                    MessageBox.Show($"Vesztettél, mert rátaláltál egy aknára. Az időd {idozito.Text}", "Vesztettél");
+                    foreach (Button item in gridTo.Children)
                     {
-                        item.Content = Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]);
-                        
+                        adatok = Convert.ToString(item.Tag).Split(',');
+                        if (Convert.ToInt32(mezok[Convert.ToInt16(adatok[0]), Convert.ToInt16(adatok[1])]) == -1)
+                        {
+                            item.Content = "X";
+
+                        }
+                        item.IsEnabled = false;
+
                     }
-                    item.IsEnabled = false;
-                    
+
                 }
-                
             }
+
             klikkSzamlalo = 0;
             foreach (Button item in gridTo.Children)
             {
@@ -412,10 +426,10 @@ namespace MineSweeper
         {
             if ((sender as Button).Content == "" && Convert.ToInt32(aknakTB.Text) > 0)
             {
-                (sender as Button).Content = "X";
+                (sender as Button).Content = "P";
                 aknakTB.Text = Convert.ToString(Convert.ToInt32(aknakTB.Text) - 1);
             }
-            else if ((sender as Button).Content == "X")
+            else if ((sender as Button).Content == "P")
             {
                 (sender as Button).Content = "";
                 aknakTB.Text = Convert.ToString(Convert.ToInt32(aknakTB.Text) + 1);

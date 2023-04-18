@@ -8,11 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="akna.png" />
     <None Remove="doomGuy0.png" />
     <None Remove="doomGuy1.png" />
     <None Remove="doomGuy2.png" />
     <None Remove="doomGuyLose.png" />
     <None Remove="doomGuyWin.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="akna.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
